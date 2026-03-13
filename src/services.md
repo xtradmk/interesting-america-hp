@@ -7,8 +7,8 @@ description: Services by INTERESTING AMERICA
 <section class="section" id="services">
   <div class="wrap fade in">
     <p class="eyebrow">Services</p>
-    <h1 style="font-size:clamp(42px,6vw,72px);line-height:1.05;margin:0 0 14px">A complete service stack for major sports events.</h1>
-    <p class="hero-copy" style="margin-top:0">Structured to protect speed, quality and margin under high demand conditions.</p>
+    <h1 class="h1" style="font-size:clamp(42px,6vw,78px)">A full execution stack for major sports events.</h1>
+    <p class="hero-copy" style="margin-top:0">Designed for decision-makers who need certainty, speed and quality under event pressure.</p>
   </div>
 </section>
 
@@ -17,17 +17,32 @@ description: Services by INTERESTING AMERICA
     <article class="card">
       <img class="icon" src="/images/icons/hotel.svg" alt="Hotel icon">
       <h3>Hotel Brokerage</h3>
-      <p>Room block sourcing, negotiation and allocation in high-pressure markets.</p>
+      <p>Room block sourcing, negotiation and allocation in constrained markets.</p>
+      <ul>
+        <li>Inventory strategy by city and venue</li>
+        <li>Commercial terms and block structures</li>
+        <li>Fallback architecture for risk reduction</li>
+      </ul>
     </article>
     <article class="card">
       <img class="icon" src="/images/icons/transfer.svg" alt="Transfer icon">
       <h3>Group Transfers</h3>
-      <p>Arrival, departure and match-day routing with reliable local partners.</p>
+      <p>Arrival, departure and match-day routing with quality-controlled partners.</p>
+      <ul>
+        <li>Movement planning by function and priority</li>
+        <li>Operational timing maps and buffers</li>
+        <li>On-the-ground contingency handling</li>
+      </ul>
     </article>
     <article class="card">
       <img class="icon" src="/images/icons/hospitality.svg" alt="Hospitality icon">
       <h3>Hospitality Access</h3>
-      <p>Ticket and venue access support where leverage and timing matter most.</p>
+      <p>Ticket and venue support through trusted access channels.</p>
+      <ul>
+        <li>Priority requests for constrained inventory</li>
+        <li>VIP venue and table coordination</li>
+        <li>Integrated guest experience layer</li>
+      </ul>
     </article>
   </div>
 </section>
@@ -36,13 +51,16 @@ description: Services by INTERESTING AMERICA
   <div class="wrap grid-2 fade">
     <div>
       <h2 class="section-title">Delivery model</h2>
-      <p class="section-lead">We manage full lifecycle delivery, from brief intake and sourcing to final guest movement and post-event wrap.</p>
+      <p class="section-lead">From first brief to final check-out, every stage is structured for speed, clarity and execution quality.</p>
     </div>
-    <div class="clients">
-      <p>1. Requirement capture and budget qualification</p>
-      <p>2. Sourcing and option architecture</p>
-      <p>3. Commercial alignment and confirmation</p>
-      <p>4. Operational execution on event days</p>
+    <div class="panel">
+      <h3>Execution sequence</h3>
+      <ul>
+        <li>Requirement capture and budget qualification</li>
+        <li>Sourcing and option architecture</li>
+        <li>Commercial alignment and confirmation</li>
+        <li>On-event execution and support</li>
+      </ul>
     </div>
   </div>
 </section>

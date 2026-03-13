@@ -8,13 +8,21 @@ description: About INTERESTING AMERICA
   <div class="wrap grid-2 fade in">
     <div>
       <p class="eyebrow">About</p>
-      <h1 style="font-size:clamp(38px,5vw,64px);line-height:1.05;margin:0">Global sports event accommodation, engineered for certainty.</h1>
+      <h1 class="h1" style="font-size:clamp(40px,5.5vw,74px)">Built for high-stakes event logistics, not generic travel.</h1>
     </div>
     <div>
-      <p class="section-lead" style="margin-top:0">We find impossible to find accommodation at large global sports events. Think Champions League Final, the Football World Cup, Formula 1 and the Olympic Games.</p>
+      <p class="section-lead">We find impossible to find accommodation at large global sports events. Think Champions League Final, the Football World Cup, Formula 1 and the Olympic Games.</p>
       <p class="section-lead">We also transfer your staff and guests. On arrival, on departure and on match day. On your behalf, we also secure hospitality access, from tickets to premium venues.</p>
-      <p class="section-lead">We do this for sponsors, sports federations, TV & media, travel agencies and family offices. We do this since 2010.</p>
+      <p class="section-lead">We do this for sponsors, sports federations, TV & media, travel agencies and family offices.</p>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid-3 fade">
+    <article class="card"><h3>Commercial discipline</h3><p>Budget qualification, leverage protection and margin awareness are integrated into every proposal.</p></article>
+    <article class="card"><h3>Operational precision</h3><p>The work is not just booking, it is orchestration across timelines, people and constraints.</p></article>
+    <article class="card"><h3>Relationship moat</h3><p>Long-term partner access is treated as strategic infrastructure, not transactional inventory.</p></article>
   </div>
 </section>
 

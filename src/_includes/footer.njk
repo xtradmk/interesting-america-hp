@@ -5,16 +5,21 @@
         <span class="logo__text">{{ site.name }}</span>
         <p>{{ site.description }}</p>
       </div>
-      
+      <div class="footer-meta">
+        <span class="chip">Berlin & Los Angeles</span>
+        <span class="chip">Since 2010</span>
+        <span class="chip">Global Sports Events</span>
+      </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <ul>
+          <li><a href="/">Home</a></li>
           {%- for item in site.nav -%}
             <li><a href="{{ item.url }}">{{ item.text }}</a></li>
           {%- endfor -%}
         </ul>
       </nav>
     </div>
-    
+
     <div class="footer-bottom">
       <p>© {% year %} {{ site.name }}. All rights reserved.</p>
     </div>
