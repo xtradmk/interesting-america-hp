@@ -17,7 +17,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--mono);background:radial-gradient(1200px 480px at 20% -10%,#ffffff 30%,#eef3f8 100%);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+body{font-family:var(--mono);background:#ffffff;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
