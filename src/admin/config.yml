@@ -14,54 +14,41 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - &page_file
-        label: "Home"
+      - label: "Home"
         name: "home"
         file: "src/index.md"
-        fields: &page_fields
+        fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Page Classes", name: "pageClasses", widget: "string", required: false }
-          - label: "Modules"
-            name: "modules"
-            widget: "list"
-            summary: "{{fields.type}} - {{fields.title}}"
-            fields:
-              - label: "Type"
-                name: "type"
-                widget: "select"
-                options: ["hero", "text-block", "features", "services-list", "cta-banner", "contact-form"]
-              - { label: "Theme", name: "theme", widget: "select", options: ["", "alt", "dark"], required: false }
-              - { label: "Pretitle", name: "pretitle", widget: "string", required: false }
-              - { label: "Title", name: "title", widget: "string", required: false }
-              - { label: "Description", name: "description", widget: "text", required: false }
-              - { label: "Content (HTML/Markdown)", name: "content", widget: "markdown", required: false }
-              - label: "CTA"
-                name: "cta"
-                widget: "object"
-                required: false
-                fields:
-                  - { label: "Text", name: "text", widget: "string", required: false }
-                  - { label: "URL", name: "url", widget: "string", required: false }
-                  - { label: "Style", name: "style", widget: "select", options: ["primary", "accent", "outline"], required: false }
-              - { label: "Image URL", name: "image", widget: "string", required: false }
-              - { label: "Image Alt", name: "imageAlt", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
 
-      - <<: *page_file
-        label: "About"
+      - label: "About"
         name: "about"
         file: "src/about.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
 
-      - <<: *page_file
-        label: "Services"
+      - label: "Services"
         name: "services"
         file: "src/services.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
 
-      - <<: *page_file
-        label: "Contact"
+      - label: "Contact"
         name: "contact"
         file: "src/contact.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "settings"
     label: "Global Settings"

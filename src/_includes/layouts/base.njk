@@ -15,15 +15,6 @@
   {% include "header.njk" %}
   
   <main id="main">
-    {# Render modules from page frontmatter #}
-    {% if modules %}
-      {% for module in modules %}
-        {% set module = module %}
-        {% include "modules/" + module.type + ".njk" %}
-      {% endfor %}
-    {% endif %}
-    
-    {# Also render any direct page content #}
     {{ content | safe }}
   </main>
   

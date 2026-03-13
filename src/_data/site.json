@@ -5,7 +5,6 @@
   "author": "INTERESTING AMERICA",
   "logo": "/images/logo.svg",
   "nav": [
-    { "text": "Home", "url": "/" },
     { "text": "About", "url": "/about/" },
     { "text": "Services", "url": "/services/" },
     { "text": "Contact", "url": "/contact/" }
