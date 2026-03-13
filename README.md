@@ -1,70 +1,63 @@
-# INTERESTING AMERICA Website
+# INTERESTING AMERICA
 
-Modular 11ty website for INTERESTING AMERICA - Sports Accommodation Solutions.
+Professional hotel brokerage website for sports events in the USA.
+
+## About
+
+Part of the INTERESTING SPORTS group. Operating since 2010 with offices in Berlin and Los Angeles.
+
+## Tech Stack
+
+- **Static Site Generator:** 11ty (Eleventy)
+- **Templating:** Nunjucks
+- **Styling:** Vanilla CSS with CSS custom properties
+- **Build:** Node.js/npm
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run serve
+
+# Build for production
+npm run build
+```
 
 ## Structure
 
 ```
 src/
-├── _data/              # JSON content files (your "CMS backend")
-│   ├── navigation.json
-│   ├── homepage.json
-│   ├── about.json
-│   ├── services.json
-│   └── contact.json
+├── _data/              # Global data (site.json)
 ├── _includes/
-│   ├── layouts/        # Base layouts
-│   ├── modules/        # Reusable module templates
-│   ├── nav.njk
-│   └── footer.njk
-├── assets/
-│   ├── styles.css
-│   └── scripts.js
-├── images/
-├── index.md            # Home (renders modules from homepage.json)
-├── about.md            # About (renders modules from about.json)
-├── services.md         # Services (renders modules from services.json)
-└── contact.md          # Contact (renders modules from contact.json)
+│   ├── layouts/        # Page layouts
+│   ├── modules/        # Reusable content modules
+│   ├── header.njk      # Site header
+│   └── footer.njk      # Site footer
+├── css/                # Stylesheets
+├── js/                 # JavaScript
+├── images/             # Static images
+├── index.md            # Home page
+├── about.md            # About page
+├── services.md         # Services page
+└── contact.md          # Contact page
 ```
 
-## Module System
+## Content Editing
 
-Each page pulls modules from `_data/*.json`. Modules are rendered in order.
+All pages use a **modular system**. Edit content in the frontmatter of each `.md` file:
 
-**Available modules:**
-- `hero` - Full-width hero with headline, text, CTAs
-- `features` - 3-column feature grid
-- `text-block` - Rich text content block
-- `logos` - Client logo grid
-- `cta-banner` - Call-to-action banner
-- `services-list` - Service cards grid
-- `contact-info` - Office locations + contact form
-
-## Adding/Editing Content
-
-1. **Edit JSON data** in `src/_data/*.json`
-2. **Add new modules** by creating entries in the JSON arrays
-3. **Reorder modules** by changing the `order` value
-4. **Create new module types** by adding templates to `src/_includes/modules/`
-
-## Development
-
-```bash
-npm install
-npm start          # Dev server on http://localhost:8080
-npm run build      # Build to _site/
+```yaml
+modules:
+  - type: hero
+    title: "Your Headline"
+    description: "Your text"
 ```
 
-## Deployment
+Available modules: `hero`, `text-block`, `features`, `services-list`, `cta-banner`, `contact-form`
 
-Push to GitHub Pages, Netlify, Vercel, or any static host.
+## License
 
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
----
-
-Built with [11ty](https://www.11ty.dev/)
+Proprietary – INTERESTING AMERICA
