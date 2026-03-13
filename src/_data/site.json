@@ -3,10 +3,19 @@
   "description": "Professional Hotel Brokerage for Sports Events in the USA",
   "url": "https://interestingamerica.com",
   "author": "INTERESTING AMERICA",
-  "logo": "/images/logo.svg",
+  "logo": "",
   "nav": [
-    { "text": "About", "url": "/about/" },
-    { "text": "Services", "url": "/services/" },
-    { "text": "Contact", "url": "/contact/" }
+    {
+      "text": "About",
+      "url": "/about/"
+    },
+    {
+      "text": "Services",
+      "url": "/services/"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact/"
+    }
   ]
 }
