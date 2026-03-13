@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: base.njk
 title: Welcome
 description: Professional hotel brokerage for sports events in the USA. Accommodation, transfers, and hospitality access for sponsors, federations, and media.
 modules:
