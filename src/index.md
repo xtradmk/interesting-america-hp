@@ -10,8 +10,8 @@ description: Accommodation, transfers and hospitality for major global sports ev
     <h1>We find impossible to find accommodation at large global sports events.</h1>
     <p class="hero-copy">Think Champions League Final, the Football World Cup, Formula 1 and the Olympic Games. We also transfer your staff and guests, on arrival, on departure and on match day. And, on your behalf, we get access to hospitality, tickets and tables at the finest venues in town.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="/contact/">Work with us</a>
-      <a class="btn btn-ghost" href="/services/">Explore services</a>
+      <a class="btn btn-primary" href="{{ '/contact/' | url }}">Work with us</a>
+      <a class="btn btn-ghost" href="{{ '/services/' | url }}">Explore services</a>
     </div>
     <div class="badge-line">
       <span class="badge"><span class="dot"></span> Since 2010</span>
@@ -40,17 +40,17 @@ description: Accommodation, transfers and hospitality for major global sports ev
     </div>
     <div class="grid-3">
       <article class="card">
-        <img class="icon" src="/images/icons/hotel.svg" alt="Hotel brokerage icon">
+        <img class="icon" src="{{ '/images/icons/hotel.svg' | url }}" alt="Hotel brokerage icon">
         <h3>Hotel Brokerage</h3>
         <p>Hard-to-find room inventory in strategic city and stadium locations, structured for groups and decision velocity.</p>
       </article>
       <article class="card">
-        <img class="icon" src="/images/icons/transfer.svg" alt="Transfer icon">
+        <img class="icon" src="{{ '/images/icons/transfer.svg' | url }}" alt="Transfer icon">
         <h3>Transfers</h3>
         <p>Arrival, departure and match-day movement, coordinated end-to-end for staff, guests and partner teams.</p>
       </article>
       <article class="card">
-        <img class="icon" src="/images/icons/hospitality.svg" alt="Hospitality icon">
+        <img class="icon" src="{{ '/images/icons/hospitality.svg' | url }}" alt="Hospitality icon">
         <h3>Hospitality Access</h3>
         <p>Ticket support and premium venue access through trusted relationships when market inventory is constrained.</p>
       </article>
@@ -94,6 +94,6 @@ description: Accommodation, transfers and hospitality for major global sports ev
   <div class="wrap fade" style="text-align:center">
     <h2 class="section-title">Work with us</h2>
     <p class="section-lead" style="margin:0 auto 20px">Send your event, room volume and timeline, we’ll return practical options fast.</p>
-    <a class="btn btn-primary" href="/contact/">Start the conversation</a>
+    <a class="btn btn-primary" href="{{ '/contact/' | url }}">Start the conversation</a>
   </div>
 </section>

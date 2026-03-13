@@ -15,7 +15,7 @@ description: Services by INTERESTING AMERICA
 <section class="section">
   <div class="wrap grid-3 fade">
     <article class="card">
-      <img class="icon" src="/images/icons/hotel.svg" alt="Hotel icon">
+      <img class="icon" src="{{ '/images/icons/hotel.svg' | url }}" alt="Hotel icon">
       <h3>Hotel Brokerage</h3>
       <p>Room block sourcing, negotiation and allocation in constrained markets.</p>
       <ul>
@@ -25,7 +25,7 @@ description: Services by INTERESTING AMERICA
       </ul>
     </article>
     <article class="card">
-      <img class="icon" src="/images/icons/transfer.svg" alt="Transfer icon">
+      <img class="icon" src="{{ '/images/icons/transfer.svg' | url }}" alt="Transfer icon">
       <h3>Group Transfers</h3>
       <p>Arrival, departure and match-day routing with quality-controlled partners.</p>
       <ul>
@@ -35,7 +35,7 @@ description: Services by INTERESTING AMERICA
       </ul>
     </article>
     <article class="card">
-      <img class="icon" src="/images/icons/hospitality.svg" alt="Hospitality icon">
+      <img class="icon" src="{{ '/images/icons/hospitality.svg' | url }}" alt="Hospitality icon">
       <h3>Hospitality Access</h3>
       <p>Ticket and venue support through trusted access channels.</p>
       <ul>

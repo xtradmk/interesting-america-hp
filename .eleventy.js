@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/interesting-america-hp/",
     dir: {
       input: "src",
       output: "_site",

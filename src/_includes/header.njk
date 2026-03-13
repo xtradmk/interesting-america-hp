@@ -1,14 +1,14 @@
 <header class="site-header">
   <div class="container">
-    <a href="/" class="logo" aria-label="{{ site.name }} - Back to Home">
-      <img src="/images/uploads/interesting-sports-black-.png" alt="{{ site.name }}" class="logo__img">
+    <a href="{{ '/' | url }}" class="logo" aria-label="{{ site.name }} - Back to Home">
+      <img src="{{ '/images/uploads/interesting-sports-black-.png' | url }}" alt="{{ site.name }}" class="logo__img">
     </a>
 
     <nav class="site-nav" aria-label="Main navigation">
       <ul class="nav-list nav-island">
         {%- for item in site.nav -%}
           <li class="nav-item{% if page.url == item.url %} nav-item--active{% endif %}">
-            <a href="{{ item.url }}" class="nav-link">{{ item.text }}</a>
+            <a href="{{ item.url | url }}" class="nav-link">{{ item.text }}</a>
           </li>
         {%- endfor -%}
       </ul>
