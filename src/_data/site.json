@@ -1,12 +1,21 @@
 {
   "name": "INTERESTING AMERICA",
-  "description": "Professional Hotel Brokerage for Sports Events in the USA",
+  "description": "Global Accommodation, Transfers, and Hospitality at large Sports Events",
   "url": "https://interestingamerica.com",
   "author": "INTERESTING AMERICA",
-  "logo": "/images/logo.svg",
+  "logo": "src/images/uploads/interesting-sports-black-.png",
   "nav": [
-    { "text": "About", "url": "/about/" },
-    { "text": "Services", "url": "/services/" },
-    { "text": "Contact", "url": "/contact/" }
+    {
+      "text": "About",
+      "url": "/about/"
+    },
+    {
+      "text": "Services",
+      "url": "/services/"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact/"
+    }
   ]
 }
