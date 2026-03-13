@@ -1,13 +1,27 @@
-<section class="module module--features">
+<section class="module module--features{% if module.theme %} module--theme-{{ module.theme }}{% endif %}">
   <div class="container">
-    <h2>{{ module.data.headline }}</h2>
+    {% if module.title %}
+      <header class="module__header">
+        <h2 class="module__title">{{ module.title }}</h2>
+        {% if module.description %}
+          <p class="module__description">{{ module.description }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
     
-    <div class="features-grid">
-      {% for feature in module.data.features %}
-      <div class="feature">
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.text }}</p>
-      </div>
+    <div class="features__grid">
+      {% for feature in module.features %}
+        <article class="feature-card">
+          {% if feature.icon %}
+            <div class="feature-card__icon">{{ feature.icon }}</div>
+          {% endif %}
+          <h3 class="feature-card__title">{{ feature.title }}</h3>
+          <p class="feature-card__text">{{ feature.description }}</p>
+          
+          {% if feature.link %}
+            <a href="{{ feature.link.url }}" class="feature-card__link">{{ feature.link.text }}</a>
+          {% endif %}
+        </article>
       {% endfor %}
     </div>
   </div>

@@ -1,0 +1,4 @@
+{# Renders modules from page.modules array #}
+{% for module in modules %}
+  {% include "modules/" + module.type + ".njk" ignore missing %}
+{% endfor %}

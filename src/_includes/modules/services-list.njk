@@ -1,21 +1,40 @@
-<section class="module module--services-list">
+<section class="module module--services-list{% if module.theme %} module--theme-{{ module.theme }}{% endif %}">
   <div class="container">
-    <h2>{{ module.data.headline }}</h2>
-    
-    <div class="services-grid">
-      {% for service in module.data.services %}
-      <div class="service-card">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-        
-        {% if service.features %}
-        <ul>
-          {% for feature in service.features %}
-          <li>{{ feature }}</li>
-          {% endfor %}
-        </ul>
+    {% if module.title %}
+      <header class="module__header">
+        <h2 class="module__title">{{ module.title }}</h2>
+        {% if module.description %}
+          <p class="module__description">{{ module.description }}</p>
         {% endif %}
-      </div>
+      </header>
+    {% endif %}
+    
+    <div class="services__list">
+      {% for service in module.services %}
+        <article class="service-card{% if service.featured %} service-card--featured{% endif %}">
+          {% if service.image %}
+            <div class="service-card__image">
+              <img src="{{ service.image }}" alt="{{ service.title }}" loading="lazy">
+            </div>
+          {% endif %}
+          
+          <div class="service-card__content">
+            <h3 class="service-card__title">{{ service.title }}</h3>
+            <p class="service-card__text">{{ service.description }}</p>
+            
+            {% if service.features %}
+              <ul class="service-card__features">
+                {% for item in service.features %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            
+            {% if service.cta %}
+              <a href="{{ service.cta.url }}" class="service-card__cta">{{ service.cta.text }}</a>
+            {% endif %}
+          </div>
+        </article>
       {% endfor %}
     </div>
   </div>

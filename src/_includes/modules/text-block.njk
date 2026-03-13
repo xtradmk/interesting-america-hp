@@ -1,15 +1,25 @@
-<section class="module module--text-block"{% if module.data.align == 'left' %} style="text-align: left;"{% endif %}>
+<section class="module module--text-block{% if module.theme %} module--theme-{{ module.theme }}{% endif %}">
   <div class="container">
-    {% if module.data.headline %}
-    <h2>{{ module.data.headline }}</h2>
-    {% endif %}
-    
-    <div class="text-content">
-      {{ module.data.text | markdown | safe }}
+    <div class="text-block__content">
+      {% if module.pretitle %}
+        <span class="text-block__pretitle">{{ module.pretitle }}</span>
+      {% endif %}
+      
+      {% if module.title %}
+        <h2 class="text-block__title">{{ module.title }}</h2>
+      {% endif %}
+      
+      <div class="text-block__body">
+        {{ module.content | safe }}
+      </div>
+      
+      {% if module.cta %}
+        <div class="text-block__cta">
+          <a href="{{ module.cta.url }}" class="btn{% if module.cta.style %} btn--{{ module.cta.style }}{% endif %}">
+            {{ module.cta.text }}
+          </a>
+        </div>
+      {% endif %}
     </div>
-    
-    {% if module.data.ctaText %}
-    <a href="{{ module.data.ctaLink }}" class="btn">{{ module.data.ctaText }}</a>
-    {% endif %}
   </div>
 </section>

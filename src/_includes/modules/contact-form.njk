@@ -1,0 +1,66 @@
+<section class="module module--contact-form{% if module.theme %} module--theme-{{ module.theme }}{% endif %}">
+  <div class="container">
+    <div class="contact-form__grid">
+      <div class="contact-form__info">
+        {% if module.pretitle %}
+          <span class="contact-form__pretitle">{{ module.pretitle }}</span>
+        {% endif %}
+        
+        {% if module.title %}
+          <h2 class="contact-form__title">{{ module.title }}</h2>
+        {% endif %}
+        
+        {% if module.description %}
+          <p class="contact-form__description">{{ module.description }}</p>
+        {% endif %}
+        
+        {% if module.contact_info %}
+          <div class="contact-info">
+            {% for item in module.contact_info %}
+              <div class="contact-info__item">
+                <span class="contact-info__label">{{ item.label }}</span>
+                {% if item.url %}
+                  <a href="{{ item.url }}">{{ item.value }}</a>
+                {% else %}
+                  <span>{{ item.value }}</span>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="contact-form__form">
+        <form action="{{ module.form_action or '#' }}" method="post" class="form">
+          {% for field in module.fields %}
+            <div class="form__field">
+              <label for="{{ field.name }}" class="form__label">{{ field.label }}{% if field.required %} *<span class="sr-only">(required)</span>{% endif %}</label>
+              
+              {% if field.type == 'textarea' %}
+                <textarea 
+                  id="{{ field.name }}" 
+                  name="{{ field.name }}" 
+                  {% if field.required %}required{% endif %}
+                  {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                  class="form__input"
+                  rows="5"
+                ></textarea>
+              {% else %}
+                <input 
+                  type="{{ field.type or 'text' }}" 
+                  id="{{ field.name }}" 
+                  name="{{ field.name }}"
+                  {% if field.required %}required{% endif %}
+                  {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                  class="form__input"
+                >
+              {% endif %}
+            </div>
+          {% endfor %}
+          
+          <button type="submit" class="btn btn--primary">{{ module.submit_text or "Send Message" }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
