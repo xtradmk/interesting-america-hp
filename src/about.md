@@ -3,7 +3,6 @@ layout: base.njk
 title: About
 description: About INTERESTING AMERICA
 ---
-
 <section class="section" id="about">
   <div class="wrap grid-2 fade in">
     <div>
