@@ -27,6 +27,7 @@ img{max-width:100%;display:block}
 .site-header{position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);background:rgba(245,247,250,.75);border-bottom:1px solid var(--line)}
 .site-header .container{height:76px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--sans);font-weight:800;letter-spacing:.02em;font-size:15px}
+.logo__img{height:30px;width:auto;display:block}
 .site-nav{display:flex;align-items:center;gap:16px}
 .nav-list{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 .nav-link{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#3d4655;position:relative}
@@ -87,6 +88,7 @@ img{max-width:100%;display:block}
 .site-footer{padding:58px 0 28px;background:#0a0f1b;color:#d6dde8;border-top:1px solid #1f2736}
 .footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px;align-items:start;border-bottom:1px solid #222b3a;padding-bottom:24px}
 .footer-brand .logo__text{font-weight:800;color:#fff}
+.footer-logo__img{height:28px;width:auto;display:block;filter:brightness(0) invert(1)}
 .footer-brand p{margin:8px 0 0;max-width:560px;color:#b3bfce}
 .footer-meta{display:flex;flex-direction:column;gap:8px}
 .chip{display:inline-flex;align-items:center;padding:7px 11px;border-radius:999px;background:#121a2a;border:1px solid #273247;font-family:var(--mono);font-size:11px;text-transform:uppercase;color:#d4dbe8;max-width:max-content}
