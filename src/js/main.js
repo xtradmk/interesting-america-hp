@@ -8,9 +8,11 @@
   document.querySelectorAll('.fade').forEach((el) => observer.observe(el));
 
   const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
+  const syncHeaderState = () => {
     if (!header) return;
-    if (window.scrollY > 16) header.style.borderBottomColor = '#ced7e5';
-    else header.style.borderBottomColor = '#dfe5ee';
-  }, { passive: true });
+    header.classList.toggle('is-scrolled', window.scrollY > 16);
+  };
+
+  window.addEventListener('scroll', syncHeaderState, { passive: true });
+  syncHeaderState();
 })();
