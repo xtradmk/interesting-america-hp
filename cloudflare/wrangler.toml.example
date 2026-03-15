@@ -1,0 +1,6 @@
+name = "ia-cms-oauth"
+main = "worker.js"
+compatibility_date = "2026-03-15"
+
+[vars]
+ALLOWED_ORIGIN = "https://xtradmk.github.io"
