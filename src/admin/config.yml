@@ -1,11 +1,13 @@
-local_backend: true
-
 backend:
   name: github
   repo: xtradmk/interesting-america-hp
   branch: main
-  auth_type: implicit
+  auth_type: pkce
   app_id: "Ov23lihgQkJGG0k8CBH9"
+
+site_url: "https://xtradmk.github.io/interesting-america-hp/"
+display_url: "https://xtradmk.github.io/interesting-america-hp/"
+logo_url: "/interesting-america-hp/images/logo.svg"
 
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
