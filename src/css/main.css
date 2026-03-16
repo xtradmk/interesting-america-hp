@@ -167,22 +167,34 @@ body.js-slider-ready .hero-bg--css{animation:none;opacity:0}
   .hero-copy-block{grid-column:auto;justify-self:start;width:min(680px,100%)}
   .placeholder-media--hero{min-height:400px}
 }
+.mobile-menu-trigger,.mobile-menu-panel{display:none}
+
 @media (max-width:800px){
-  .site-header{top:6px}
-  .site-header .container{height:56px}
-  .logo{height:44px;padding:4px 14px;margin-left:0}
-  .logo__img{height:30px}
-  .site-nav{height:44px}
-  .nav-island{height:44px;padding:2px 3px}
-  .nav-list{gap:4px}
-  .nav-link{height:36px;font-size:12.5px;padding:0 10px}
+  .site-header{top:12px}
+  .site-header .container{height:56px;justify-content:center}
+  .logo{height:56px;padding:4px 20px;margin-left:0}
+  .logo__img{height:40px;width:auto;object-fit:contain}
+  .site-nav{display:none}
+
+  .mobile-menu-trigger{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:120;display:flex;align-items:center;justify-content:space-between;width:min(520px,84vw);height:54px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(233,238,245,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);font-family:var(--sans);font-size:15px;color:#0b1020;box-shadow:0 8px 24px rgba(15,23,42,.18)}
+  .mobile-menu-trigger__icon{font-size:20px;line-height:1}
+  .mobile-menu-trigger__label{font-size:15px;line-height:1}
+
+  .mobile-menu-panel{position:fixed;left:50%;transform:translateX(-50%);bottom:88px;z-index:121;width:min(520px,84vw);border-radius:28px;padding:22px 24px 18px;background:linear-gradient(180deg,rgba(236,239,244,.94) 0%,rgba(199,216,237,.9) 100%);backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);box-shadow:0 18px 40px rgba(15,23,42,.25);border:1px solid rgba(255,255,255,.55)}
+  .mobile-menu-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .mobile-menu-link{display:block;text-align:center;font-family:var(--sans);font-size:19px;line-height:1.2;color:#0b1020}
+  .mobile-menu-footer{margin-top:14px;display:flex;align-items:center;justify-content:space-between}
+  .mobile-menu-close{border:none;background:transparent;font-family:var(--sans);font-size:19px;color:#0b1020;padding:0}
+
+  body.mobile-menu-open .mobile-menu-panel{display:block}
+
   .grid-2,.grid-3,.grid-4,.stat-row,.clients{grid-template-columns:1fr}
   .hero{height:100svh;min-height:100svh}
-  .hero--photo .wrap-wide{min-height:100svh;padding-top:88px;padding-bottom:34px;align-items:end}
-  .hero-copy-block{width:100%;max-width:100%}
-  .hero h1,.h1{font-size:clamp(24px,7.2vw,34px);max-width:15ch;min-height:calc(1.04em * 4);line-height:1.04}
-  .hero-link-cta{font-size:clamp(22px,7vw,34px);margin-top:1.3em}
-  .hero-photo-caption{left:max(12px, calc((100vw - 92vw)/2 - 16px));bottom:14px;font-size:12px}
+  .hero--photo .wrap-wide{min-height:100svh;align-items:center}
+  .hero-copy-block{width:min(560px,92%)}
+  .hero h1,.h1{font-size:clamp(26px,3.9vw,58px);max-width:16ch;min-height:calc(1.02em * 4);line-height:1.02}
+  .hero-link-cta{font-size:clamp(26px,3.9vw,58px);margin-top:2em}
+  .hero-photo-caption{display:none}
   .hero-slider-ui{right:max(12px, calc((100vw - 92vw)/2));bottom:14px}
   .placeholder-media{min-height:260px}
   .placeholder-media--hero{min-height:300px}
@@ -190,15 +202,16 @@ body.js-slider-ready .hero-bg--css{animation:none;opacity:0}
   .footer-content{grid-template-columns:1fr}
 }
 
+@media (min-width:801px){
+  .mobile-menu-trigger,.mobile-menu-panel{display:none !important}
+}
+
 @media (max-width:900px) and (orientation:landscape){
-  .site-header{top:4px}
-  .site-header .container{height:52px}
-  .logo{height:40px;padding:3px 12px}
-  .logo__img{height:26px}
-  .site-nav{height:40px}
-  .nav-island{height:40px}
-  .nav-link{height:32px;font-size:12px;padding:0 9px}
-  .hero--photo .wrap-wide{padding-top:64px;padding-bottom:20px}
-  .hero h1,.h1{font-size:clamp(21px,4.2vw,30px);max-width:18ch;min-height:calc(1.04em * 4)}
-  .hero-link-cta{font-size:clamp(20px,3.3vw,28px);margin-top:1em}
+  .site-header{top:6px}
+  .site-header .container{height:50px}
+  .logo{height:46px;padding:3px 14px}
+  .logo__img{height:32px}
+  .mobile-menu-trigger{bottom:16px;height:48px}
+  .mobile-menu-panel{bottom:72px;padding:16px 18px 14px}
+  .mobile-menu-link{font-size:16px}
 }

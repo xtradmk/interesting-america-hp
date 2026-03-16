@@ -195,8 +195,50 @@
     runLoop();
   };
 
+  const initMobileMenu = () => {
+    const trigger = document.querySelector('.mobile-menu-trigger');
+    const panel = document.querySelector('#mobile-menu-panel');
+    const closeBtn = document.querySelector('.mobile-menu-close');
+    const links = Array.from(document.querySelectorAll('.mobile-menu-link'));
+    const hasHero = !!document.querySelector('.hero--photo');
+
+    if (!hasHero || !trigger || !panel) return;
+
+    const close = () => {
+      document.body.classList.remove('mobile-menu-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.querySelector('.mobile-menu-trigger__label').textContent = 'Menu';
+      panel.hidden = true;
+    };
+
+    const open = () => {
+      document.body.classList.add('mobile-menu-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      trigger.querySelector('.mobile-menu-trigger__label').textContent = 'Close';
+      panel.hidden = false;
+    };
+
+    trigger.addEventListener('click', () => {
+      if (document.body.classList.contains('mobile-menu-open')) {
+        close();
+      } else {
+        open();
+      }
+    });
+
+    closeBtn?.addEventListener('click', close);
+    links.forEach((link) => link.addEventListener('click', close));
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 800) close();
+    }, { passive: true });
+
+    close();
+  };
+
   syncHeaderState();
   syncParallax();
   initHeroSlider();
   runTypewriter();
+  initMobileMenu();
 })();
