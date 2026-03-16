@@ -46,7 +46,7 @@ img{max-width:100%;display:block}
 .hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
 .hero-copy-block{position:relative;z-index:2;max-width:760px}
 .hero-media{position:relative;z-index:1}
-.hero--photo{background-image:linear-gradient(105deg,rgba(8,15,28,.78) 0%,rgba(8,15,28,.62) 42%,rgba(8,15,28,.35) 68%,rgba(8,15,28,.28) 100%),url('/images/uploads/hero-header-bg.jpg');background-size:cover;background-position:center 38%;background-repeat:no-repeat}
+.hero--photo{background-image:linear-gradient(105deg,rgba(8,15,28,.78) 0%,rgba(8,15,28,.62) 42%,rgba(8,15,28,.35) 68%,rgba(8,15,28,.28) 100%),var(--hero-bg);background-size:cover;background-position:center 38%;background-repeat:no-repeat}
 .hero--photo .eyebrow,.hero--photo h1,.hero--photo .hero-copy{color:#fff}
 .hero--photo .hero-copy{max-width:66ch}
 .hero--photo .badge{background:rgba(255,255,255,.92)}

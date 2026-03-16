@@ -4,7 +4,7 @@ title: INTERESTING AMERICA
 description: Accommodation, transfers and hospitality for major global sports events.
 ---
 
-<section class="hero section hero--photo" id="home">
+<section class="hero section hero--photo" id="home" style="--hero-bg:url('{{ '/images/uploads/hero-header-bg.jpg' | url }}')">
   <div class="wrap-wide fade in">
     <div class="hero-copy-block">
       <p class="eyebrow">INTERESTING AMERICA · GLOBAL SPORTS ACCOMMODATION</p>
