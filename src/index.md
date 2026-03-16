@@ -5,11 +5,11 @@ description: Accommodation, transfers and hospitality for major global sports ev
 ---
 
 <section class="hero section hero--photo" id="home"
-  data-image-1="{{ '/images/uploads/hero-atl-marriott-marquis.jpg' | url }}"
-  data-image-2="{{ '/images/uploads/hero-st-regis-san-francisco.jpg' | url }}"
-  data-image-3="{{ '/images/uploads/hero-los-angeles-ca.jpg' | url }}"
-  data-image-4="{{ '/images/uploads/hero-dallas-tx.jpg' | url }}"
-  data-image-5="{{ '/images/uploads/hero-santa-monica-ca.jpg' | url }}">
+  data-image1="{{ '/images/uploads/hero-atl-marriott-marquis.jpg' | url }}"
+  data-image2="{{ '/images/uploads/hero-st-regis-san-francisco.jpg' | url }}"
+  data-image3="{{ '/images/uploads/hero-los-angeles-ca.jpg' | url }}"
+  data-image4="{{ '/images/uploads/hero-dallas-tx.jpg' | url }}"
+  data-image5="{{ '/images/uploads/hero-santa-monica-ca.jpg' | url }}">
   <div class="hero-bg-track" aria-hidden="true">
     <div class="hero-bg hero-bg--active" style="background-image:url('{{ '/images/uploads/hero-atl-marriott-marquis.jpg' | url }}')"></div>
     <div class="hero-bg hero-bg--next" style="background-image:url('{{ '/images/uploads/hero-st-regis-san-francisco.jpg' | url }}')"></div>
