@@ -24,7 +24,9 @@
     {{ content | safe }}
   </main>
   
-  {% include "footer.njk" %}
+  {% if not hide_footer %}
+    {% include "footer.njk" %}
+  {% endif %}
 
   <script src="{{ '/js/main.js' | url }}?v=20260316-11" defer></script>
 </body>
