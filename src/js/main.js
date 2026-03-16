@@ -36,13 +36,12 @@
 
   const initHeroSlider = () => {
     const hero = document.querySelector('.hero--photo');
-    const track = hero?.querySelector('.hero-bg-track');
     const activeBg = hero?.querySelector('.hero-bg--active');
     const nextBg = hero?.querySelector('.hero-bg--next');
     const caption = hero?.querySelector('#hero-photo-caption');
     const prevBtn = hero?.querySelector('[data-hero-prev]');
     const nextBtn = hero?.querySelector('[data-hero-next]');
-    if (!hero || !track || !activeBg || !nextBg || !caption) return;
+    if (!hero || !activeBg || !nextBg || !caption) return;
 
     const slides = [
       { image: hero.dataset.image1, caption: 'Marriott Marquis, Atlanta, GA' },
@@ -58,8 +57,16 @@
     let timerId;
     let isAnimating = false;
 
+    const preload = () => {
+      slides.forEach((slide) => {
+        const img = new Image();
+        img.src = slide.image;
+      });
+    };
+
     const applyCurrentSlide = () => {
-      activeBg.style.backgroundImage = `url('${slides[current].image}')`;
+      activeBg.style.backgroundImage = `url(${slides[current].image})`;
+      nextBg.style.backgroundImage = `url(${slides[(current + 1) % slides.length].image})`;
       caption.textContent = slides[current].caption;
     };
 
@@ -73,13 +80,15 @@
       nextBg.style.transition = 'none';
       activeBg.style.transition = 'none';
       nextBg.style.transform = `translateX(${fromX})`;
-      nextBg.style.backgroundImage = `url('${slides[nextIndex].image}')`;
+      nextBg.style.backgroundImage = `url(${slides[nextIndex].image})`;
       void nextBg.offsetWidth;
 
-      activeBg.style.transition = 'transform .9s ease';
-      nextBg.style.transition = 'transform .9s ease';
-      activeBg.style.transform = `translateX(${toX})`;
-      nextBg.style.transform = 'translateX(0)';
+      requestAnimationFrame(() => {
+        activeBg.style.transition = 'transform .9s ease';
+        nextBg.style.transition = 'transform .9s ease';
+        activeBg.style.transform = `translateX(${toX})`;
+        nextBg.style.transform = 'translateX(0)';
+      });
 
       caption.classList.add('is-updating');
       window.setTimeout(() => {
@@ -91,17 +100,11 @@
         activeBg.style.transition = 'none';
         nextBg.style.transition = 'none';
         activeBg.style.transform = 'translateX(0)';
-        activeBg.style.backgroundImage = `url('${slides[nextIndex].image}')`;
+        activeBg.style.backgroundImage = `url(${slides[nextIndex].image})`;
         nextBg.style.transform = 'translateX(100%)';
         current = nextIndex;
         isAnimating = false;
       }, 930);
-    };
-
-    const goTo = (index) => {
-      const direction = index > current ? 'next' : 'prev';
-      transitionTo(index, direction);
-      restartAuto();
     };
 
     const stepNext = () => transitionTo((current + 1) % slides.length, 'next');
@@ -122,6 +125,7 @@
       restartAuto();
     });
 
+    preload();
     applyCurrentSlide();
     restartAuto();
   };
