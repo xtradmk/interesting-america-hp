@@ -42,8 +42,6 @@
     const caption = hero?.querySelector('#hero-photo-caption');
     const prevBtn = hero?.querySelector('[data-hero-prev]');
     const nextBtn = hero?.querySelector('[data-hero-next]');
-    const dotsWrap = hero?.querySelector('[data-hero-dots]');
-    const dots = Array.from(hero?.querySelectorAll('[data-hero-dot]') || []);
     if (!hero || !track || !activeBg || !nextBg || !caption) return;
 
     const slides = [
@@ -60,17 +58,9 @@
     let timerId;
     let isAnimating = false;
 
-    const renderDots = () => {
-      if (!dots.length) return;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('is-active', index === current);
-      });
-    };
-
     const applyCurrentSlide = () => {
       activeBg.style.backgroundImage = `url('${slides[current].image}')`;
       caption.textContent = slides[current].caption;
-      renderDots();
     };
 
     const transitionTo = (nextIndex, direction = 'next') => {
@@ -104,7 +94,6 @@
         activeBg.style.backgroundImage = `url('${slides[nextIndex].image}')`;
         nextBg.style.transform = 'translateX(100%)';
         current = nextIndex;
-        renderDots();
         isAnimating = false;
       }, 930);
     };
@@ -122,17 +111,6 @@
       window.clearInterval(timerId);
       timerId = window.setInterval(stepNext, 10000);
     };
-
-    dots.forEach((dot, index) => {
-      if (index >= slides.length) {
-        dot.style.display = 'none';
-        return;
-      }
-      dot.style.display = 'block';
-      dot.addEventListener('click', () => {
-        goTo(index);
-      });
-    });
 
     prevBtn?.addEventListener('click', () => {
       stepPrev();
