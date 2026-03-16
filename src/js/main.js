@@ -136,23 +136,63 @@
     const cta = document.querySelector('.hero-link-cta');
     if (!el) return;
 
-    const fullText = el.dataset.text || el.textContent || '';
-    el.textContent = '';
+    const speedMs = 48;
+    const holdMs = 10000;
 
-    let i = 0;
-    const speedMs = 90;
+    const text1 = el.dataset.text || el.textContent || '';
+    const text2 = 'We also transfer your staff and guests. On arrival, on departure and on match day.';
+    const text3 = 'And - on your behalf - we get access to hospitality: tickets and tables at the finest venues in town.';
 
-    const tick = () => {
-      if (i >= fullText.length) {
-        if (cta) window.setTimeout(() => cta.classList.add('is-visible'), 1000);
-        return;
-      }
-      el.textContent += fullText.charAt(i);
-      i += 1;
-      window.setTimeout(tick, speedMs);
+    const sequence = [text1, text2, text3];
+    let seqIndex = 0;
+
+    const typeText = (text, done) => {
+      el.textContent = '';
+      let i = 0;
+
+      const tick = () => {
+        if (i >= text.length) {
+          done();
+          return;
+        }
+        el.textContent += text.charAt(i);
+        i += 1;
+        window.setTimeout(tick, speedMs);
+      };
+
+      tick();
     };
 
-    tick();
+    const runLoop = () => {
+      const currentText = sequence[seqIndex % sequence.length];
+
+      typeText(currentText, () => {
+        if (seqIndex === 0) {
+          if (cta) {
+            window.setTimeout(() => {
+              cta.classList.add('is-visible');
+              window.setTimeout(() => {
+                seqIndex = 1;
+                runLoop();
+              }, 5000);
+            }, 1000);
+          } else {
+            window.setTimeout(() => {
+              seqIndex = 1;
+              runLoop();
+            }, 5000);
+          }
+          return;
+        }
+
+        window.setTimeout(() => {
+          seqIndex = (seqIndex + 1) % sequence.length;
+          runLoop();
+        }, holdMs);
+      });
+    };
+
+    runLoop();
   };
 
   syncHeaderState();
