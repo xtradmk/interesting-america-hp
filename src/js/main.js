@@ -44,23 +44,38 @@
 
     const slides = [
       {
-        image: hero.dataset.imageOne,
-        caption: 'The Beverly Hills Hotel, Beverly Hills, CA'
+        image: hero.dataset.image1,
+        caption: 'Marriott Marquis, Atlanta, GA'
       },
       {
-        image: hero.dataset.imageTwo,
-        caption: 'Atlanta Marriott Marquis, Atlanta, GA'
+        image: hero.dataset.image2,
+        caption: 'The St. Regis, San Francisco, CA'
+      },
+      {
+        image: hero.dataset.image3,
+        caption: 'Los Angeles, CA'
+      },
+      {
+        image: hero.dataset.image4,
+        caption: 'Dallas, TX'
+      },
+      {
+        image: hero.dataset.image5,
+        caption: 'Santa Monica, CA'
       }
     ];
 
+    const usableSlides = slides.filter((slide) => slide.image);
+    if (!usableSlides.length) return;
+
     let current = 0;
-    activeBg.style.backgroundImage = `url('${slides[current].image}')`;
-    caption.textContent = slides[current].caption;
+    activeBg.style.backgroundImage = `url('${usableSlides[current].image}')`;
+    caption.textContent = usableSlides[current].caption;
 
     window.setInterval(() => {
-      const next = (current + 1) % slides.length;
+      const next = (current + 1) % usableSlides.length;
       nextBg.style.transform = 'translateX(100%)';
-      nextBg.style.backgroundImage = `url('${slides[next].image}')`;
+      nextBg.style.backgroundImage = `url('${usableSlides[next].image}')`;
       // force layout flush before transition
       void nextBg.offsetWidth;
 
@@ -68,14 +83,14 @@
       caption.classList.add('is-updating');
 
       window.setTimeout(() => {
-        caption.textContent = slides[next].caption;
+        caption.textContent = usableSlides[next].caption;
         caption.classList.remove('is-updating');
       }, 220);
 
       window.setTimeout(() => {
         track.classList.remove('is-sliding');
         activeBg.style.transform = 'translateX(0)';
-        activeBg.style.backgroundImage = `url('${slides[next].image}')`;
+        activeBg.style.backgroundImage = `url('${usableSlides[next].image}')`;
         nextBg.style.transform = 'translateX(100%)';
         current = next;
       }, 950);

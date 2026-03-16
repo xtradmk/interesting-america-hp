@@ -4,7 +4,12 @@ title: INTERESTING AMERICA
 description: Accommodation, transfers and hospitality for major global sports events.
 ---
 
-<section class="hero section hero--photo" id="home" data-image-one="{{ '/images/uploads/hero-header-bg.jpg' | url }}" data-image-two="{{ '/images/uploads/hero-header-bg.jpg' | url }}">
+<section class="hero section hero--photo" id="home"
+  data-image-1="{{ '/images/uploads/hero-atl-marriott-marquis.jpg' | url }}"
+  data-image-2="{{ '/images/uploads/hero-st-regis-san-francisco.jpg' | url }}"
+  data-image-3="{{ '/images/uploads/hero-los-angeles-ca.jpg' | url }}"
+  data-image-4="{{ '/images/uploads/hero-dallas-tx.jpg' | url }}"
+  data-image-5="{{ '/images/uploads/hero-santa-monica-ca.jpg' | url }}">
   <div class="hero-bg-track" aria-hidden="true">
     <div class="hero-bg hero-bg--active"></div>
     <div class="hero-bg hero-bg--next"></div>
@@ -25,7 +30,7 @@ description: Accommodation, transfers and hospitality for major global sports ev
     </div>
   </div>
 
-  <p class="hero-photo-caption" id="hero-photo-caption">The Beverly Hills Hotel, Beverly Hills, CA</p>
+  <p class="hero-photo-caption" id="hero-photo-caption">Marriott Marquis, Atlanta, GA</p>
 </section>
 
 <section class="section story-section">
