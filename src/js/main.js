@@ -139,7 +139,7 @@
     const speedMs = 48;
     const holdMs = 10000;
 
-    const text1 = 'We secure rooms for\nyour groups at major\nglobal sports\nevents.';
+    const text1 = 'We secure rooms\nfor your groups\nat major global\nsports events.';
     const text2 = 'We also transfer your\nstaff and guests. On\narrival, on departure,\nand on match day.';
     const text3 = 'And on your behalf, we\nget access to hospitality:\ntickets and tables at the\nfinest venues in town.';
 
