@@ -191,7 +191,6 @@ body.js-slider-ready .hero-bg--css{animation:none;opacity:0}
   .hero--photo .wrap-wide{min-height:100svh;align-items:center}
   .hero-copy-block{width:min(560px,90%)}
   .hero h1,.h1{font-size:clamp(30px,9vw,40px);max-width:15ch;min-height:calc(1.08em * 4);line-height:1.08}
-  .hero h1.typewriter{white-space:pre-line}
   .hero-link-cta{font-size:clamp(22px,7.6vw,34px);margin-top:1.2em}
   .hero-photo-caption{display:none}
   .hero-slider-ui{display:none}
