@@ -24,7 +24,7 @@ img{max-width:100%;display:block}
 .container,.wrap{width:min(1180px,92%);margin:0 auto}
 .wrap-wide{width:min(1320px,94%);margin:0 auto}
 
-.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border:0;isolation:isolate}
+.site-header{position:fixed;top:56px;left:0;right:0;z-index:100;background:transparent;border:0;isolation:isolate}
 .site-header .container{height:84px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--sans);font-weight:800;letter-spacing:.02em;font-size:15px;display:inline-flex;align-items:center;justify-content:center;padding:4px 26px;margin-left:-16px;background:transparent;border:1px solid transparent;border-radius:999px;transition:background .28s ease,border-color .28s ease,box-shadow .28s ease,backdrop-filter .28s ease,transform .28s ease;position:relative;z-index:3}
 .logo__img{height:56px;width:auto;display:block;filter:brightness(0) invert(1);transition:filter .28s ease}

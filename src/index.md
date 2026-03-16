@@ -11,8 +11,8 @@ description: Accommodation, transfers and hospitality for major global sports ev
   data-image-4="{{ '/images/uploads/hero-dallas-tx.jpg' | url }}"
   data-image-5="{{ '/images/uploads/hero-santa-monica-ca.jpg' | url }}">
   <div class="hero-bg-track" aria-hidden="true">
-    <div class="hero-bg hero-bg--active"></div>
-    <div class="hero-bg hero-bg--next"></div>
+    <div class="hero-bg hero-bg--active" style="background-image:url('{{ '/images/uploads/hero-atl-marriott-marquis.jpg' | url }}')"></div>
+    <div class="hero-bg hero-bg--next" style="background-image:url('{{ '/images/uploads/hero-st-regis-san-francisco.jpg' | url }}')"></div>
     <div class="hero-bg-overlay"></div>
   </div>
 
