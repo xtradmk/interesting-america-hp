@@ -40,7 +40,7 @@ hero_caption5: Santa Monica, CA
 
   <div class="wrap-wide fade in">
     <div class="hero-copy-block">
-      <h1 class="typewriter" data-text="We secure rooms for your groups at major global sports events.">We secure rooms for your groups at major global sports events.</h1>
+      <h1 class="typewriter" data-text="We secure rooms&#10;for your groups&#10;at major global&#10;sports events.">We secure rooms<br>for your groups<br>at major global<br>sports events.</h1>
       <a class="hero-link-cta" href="{{ '/contact/' | url }}">
         <span class="hero-link-cta__text">Get in Touch</span>
         <span class="hero-link-cta__icon" aria-hidden="true">
