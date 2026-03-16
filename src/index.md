@@ -8,17 +8,7 @@ description: Accommodation, transfers and hospitality for major global sports ev
   <div class="wrap-wide fade in">
     <div class="hero-copy-block">
       <p class="eyebrow">INTERESTING AMERICA · GLOBAL SPORTS ACCOMMODATION</p>
-      <h1>We find impossible to find accommodation at large global sports events.</h1>
-      <p class="hero-copy">Think Champions League Final, the Football World Cup, Formula 1 and the Olympic Games. We also transfer your staff and guests, on arrival, on departure and on match day. And, on your behalf, we get access to hospitality, tickets and tables at the finest venues in town.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="{{ '/contact/' | url }}">Work with us</a>
-        <a class="btn btn-ghost" href="{{ '/services/' | url }}">Explore services</a>
-      </div>
-      <div class="badge-line">
-        <span class="badge"><span class="dot"></span> Since 2010</span>
-        <span class="badge"><span class="dot"></span> Berlin & Los Angeles</span>
-        <span class="badge"><span class="dot"></span> Global Major Events</span>
-      </div>
+      <h1>We secure rooms for you at major global sports events.</h1>
     </div>
   </div>
 </section>

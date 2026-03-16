@@ -27,10 +27,11 @@ img{max-width:100%;display:block}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border:0;isolation:isolate}
 .site-header .container{height:96px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--sans);font-weight:800;letter-spacing:.02em;font-size:15px;display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;margin-left:-16px;background:transparent;border:1px solid transparent;border-radius:999px;transition:background .28s ease,border-color .28s ease,box-shadow .28s ease,backdrop-filter .28s ease,transform .28s ease;position:relative;z-index:3}
-.logo__img{height:56px;width:auto;display:block;filter:none}
+.logo__img{height:56px;width:auto;display:block;filter:brightness(0) invert(1);transition:filter .28s ease}
 .site-nav{display:flex;align-items:center;position:relative;z-index:3}
 
 .site-header.is-scrolled .logo{background:rgba(224,228,235,.62);border-color:rgba(255,255,255,.75);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 10px 30px rgba(15,23,42,.12), inset 0 1px 0 rgba(255,255,255,.65)}
+.site-header.is-scrolled .logo__img{filter:none}
 .site-header.is-scrolled .nav-island{box-shadow:0 12px 34px rgba(15,23,42,.16), inset 0 1px 0 rgba(255,255,255,.7);transform:translateY(0)}
 .nav-list{display:flex;gap:8px;list-style:none;margin:0;padding:0}
 .nav-island{padding:8px;border-radius:999px;background:rgba(224,228,235,.62);border:1px solid rgba(255,255,255,.75);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 10px 30px rgba(15,23,42,.12), inset 0 1px 0 rgba(255,255,255,.65)}
@@ -44,14 +45,15 @@ img{max-width:100%;display:block}
 .hero:before{content:"";position:absolute;inset:-20% -20% auto auto;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,#dbe7ff 0%,rgba(219,231,255,0) 70%);pointer-events:none}
 .hero:after{content:"";position:absolute;left:-140px;bottom:-200px;width:540px;height:540px;border-radius:50%;background:none;pointer-events:none}
 .hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
-.hero-copy-block{position:relative;z-index:2;max-width:760px}
+.hero-copy-block{position:relative;z-index:2;grid-column:1;justify-self:end;width:min(560px,92%)}
 .hero-media{position:relative;z-index:1}
 .hero--photo{background-image:linear-gradient(105deg,rgba(8,15,28,.78) 0%,rgba(8,15,28,.62) 42%,rgba(8,15,28,.35) 68%,rgba(8,15,28,.28) 100%),var(--hero-bg);background-size:cover;background-position:center 38%;background-repeat:no-repeat}
+.hero--photo .wrap-wide{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:68vh}
 .hero--photo .eyebrow,.hero--photo h1,.hero--photo .hero-copy{color:#fff}
 .hero--photo .hero-copy{max-width:66ch}
 .hero--photo .badge{background:rgba(255,255,255,.92)}
 .eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#4b5563;margin-bottom:16px}
-.hero h1,.h1{font-family:var(--sans);font-size:clamp(44px,6.4vw,96px);line-height:1.0;margin:0;max-width:12ch;font-weight:800;letter-spacing:-.04em}
+.hero h1,.h1{font-family:var(--sans);font-size:clamp(33px,4.8vw,72px);line-height:1.02;margin:0;max-width:12ch;font-weight:800;letter-spacing:-.04em}
 .hero-copy{max-width:63ch;color:#2f3744;font-size:clamp(17px,1.9vw,22px);margin-top:20px}
 .hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:700;font-size:12px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;transition:.25s}
@@ -126,6 +128,8 @@ img{max-width:100%;display:block}
   .grid-4,.stat-row{grid-template-columns:repeat(2,minmax(0,1fr))}
   .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero-layout,.story-grid{grid-template-columns:1fr}
+  .hero--photo .wrap-wide{grid-template-columns:1fr;min-height:56vh}
+  .hero-copy-block{justify-self:start;width:min(680px,100%)}
   .placeholder-media--hero{min-height:400px}
 }
 @media (max-width:800px){
