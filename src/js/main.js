@@ -48,7 +48,10 @@
       { image: hero.dataset.image2, caption: hero.dataset.caption2 || 'The St. Regis, San Francisco, CA' },
       { image: hero.dataset.image3, caption: hero.dataset.caption3 || 'Los Angeles, CA' },
       { image: hero.dataset.image4, caption: hero.dataset.caption4 || 'Dallas, TX' },
-      { image: hero.dataset.image5, caption: hero.dataset.caption5 || 'Santa Monica, CA' }
+      { image: hero.dataset.image5, caption: hero.dataset.caption5 || 'Santa Monica, CA' },
+      { image: hero.dataset.image6, caption: hero.dataset.caption6 || 'Maracana Stadium, Rio de Janiero, Brazil · 2014 World Cup Final Venue' },
+      { image: hero.dataset.image7, caption: hero.dataset.caption7 || 'The Colony Hotel*** · Miami Beach, FL' },
+      { image: hero.dataset.image8, caption: hero.dataset.caption8 || '2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue' }
     ].filter((slide) => slide.image);
 
     if (!slides.length) return;

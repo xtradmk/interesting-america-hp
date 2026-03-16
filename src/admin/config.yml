@@ -36,6 +36,12 @@ collections:
           - { label: "Hero Caption 4", name: "hero_caption4", widget: "string" }
           - { label: "Hero Image 5", name: "hero_image5", widget: "image" }
           - { label: "Hero Caption 5", name: "hero_caption5", widget: "string" }
+          - { label: "Hero Image 6", name: "hero_image6", widget: "image", required: false }
+          - { label: "Hero Caption 6", name: "hero_caption6", widget: "string", required: false }
+          - { label: "Hero Image 7", name: "hero_image7", widget: "image", required: false }
+          - { label: "Hero Caption 7", name: "hero_caption7", widget: "string", required: false }
+          - { label: "Hero Image 8", name: "hero_image8", widget: "image", required: false }
+          - { label: "Hero Caption 8", name: "hero_caption8", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
       - label: "About"

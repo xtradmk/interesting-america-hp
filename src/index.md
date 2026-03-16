@@ -14,6 +14,12 @@ hero_image4: /images/uploads/hero-dallas-tx.jpg
 hero_caption4: Dallas, TX · 2026 Soccer World Cup Host City
 hero_image5: /images/uploads/hero-santa-monica-ca.jpg
 hero_caption5: Santa Monica, CA
+hero_image6: /images/uploads/hero-maracana-2014.jpg
+hero_caption6: Maracana Stadium, Rio de Janiero, Brazil · 2014 World Cup Final Venue
+hero_image7: /images/uploads/hero-colony-hotel-mia.jpg
+hero_caption7: The Colony Hotel*** · Miami Beach, FL
+hero_image8: /images/uploads/hero-sofi-2025.jpg
+hero_caption8: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue
 ---
 
 <section class="hero section hero--photo" id="home"
@@ -27,7 +33,13 @@ hero_caption5: Santa Monica, CA
   data-image4="{{ hero_image4 | url }}"
   data-caption4="{{ hero_caption4 }}"
   data-image5="{{ hero_image5 | url }}"
-  data-caption5="{{ hero_caption5 }}">
+  data-caption5="{{ hero_caption5 }}"
+  data-image6="{{ hero_image6 | url }}"
+  data-caption6="{{ hero_caption6 }}"
+  data-image7="{{ hero_image7 | url }}"
+  data-caption7="{{ hero_caption7 }}"
+  data-image8="{{ hero_image8 | url }}"
+  data-caption8="{{ hero_caption8 }}">
   <div class="hero-bg-track" aria-hidden="true">
     <div class="hero-bg hero-bg--active" style="background-image:url('{{ hero_image1 | url }}')"></div>
     <div class="hero-bg hero-bg--next" style="background-image:url('{{ hero_image2 | url }}')"></div>
@@ -36,6 +48,9 @@ hero_caption5: Santa Monica, CA
     <div class="hero-bg hero-bg--css hero-bg--3" style="background-image:url('{{ hero_image3 | url }}')"></div>
     <div class="hero-bg hero-bg--css hero-bg--4" style="background-image:url('{{ hero_image4 | url }}')"></div>
     <div class="hero-bg hero-bg--css hero-bg--5" style="background-image:url('{{ hero_image5 | url }}')"></div>
+    <div class="hero-bg hero-bg--css hero-bg--6" style="background-image:url('{{ hero_image6 | url }}')"></div>
+    <div class="hero-bg hero-bg--css hero-bg--7" style="background-image:url('{{ hero_image7 | url }}')"></div>
+    <div class="hero-bg hero-bg--css hero-bg--8" style="background-image:url('{{ hero_image8 | url }}')"></div>
     <div class="hero-bg-overlay"></div>
   </div>
 
