@@ -15,9 +15,7 @@ module.exports = function(eleventyConfig) {
     return new Date().getFullYear();
   });
 
-  const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-  const autoPathPrefix = repoName ? `/${repoName}/` : "/interesting-america-hp/";
-  const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || autoPathPrefix;
+  const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || "/";
 
   return {
     pathPrefix,
