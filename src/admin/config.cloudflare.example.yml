@@ -5,9 +5,9 @@ backend:
   base_url: https://ia-cms-oauth.<your-subdomain>.workers.dev
   auth_endpoint: auth
 
-site_url: "https://xtradmk.github.io/interesting-america-hp/"
-display_url: "https://xtradmk.github.io/interesting-america-hp/"
-logo_url: "/interesting-america-hp/images/logo.svg"
+site_url: "https://interesting-america.com/"
+display_url: "https://interesting-america.com/"
+logo_url: "/images/logo.svg"
 
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
