@@ -138,6 +138,7 @@
   const runTypewriter = () => {
     const el = document.querySelector('.typewriter');
     const cta = document.querySelector('.hero-link-cta');
+    const subcopy = document.querySelector('.hero-home-subcopy');
     if (!el) return;
 
     const speedMs = 48;
@@ -172,9 +173,10 @@
 
       typeText(currentText, () => {
         if (seqIndex === 0) {
-          if (cta) {
+          if (cta || subcopy) {
             window.setTimeout(() => {
-              cta.classList.add('is-visible');
+              cta?.classList.add('is-visible');
+              subcopy?.classList.add('is-visible');
               window.setTimeout(() => {
                 seqIndex = 1;
                 runLoop();
@@ -289,7 +291,7 @@
 
       const subject = encodeURIComponent('Newsletter subscription');
       const body = encodeURIComponent(`Please add this email address to the newsletter list:\n\n${email}`);
-      window.location.href = `mailto:usa@interesting-america.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:america@interesting.global?subject=${subject}&body=${body}`;
     });
   };
 

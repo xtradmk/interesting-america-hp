@@ -55,9 +55,15 @@ hero_caption8: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Ve
   </div>
 
   <div class="wrap-wide fade in">
-    <div class="hero-copy-block">
+    <div class="hero-copy-block hero-copy-block--home">
       <h1 class="typewriter" data-text="We secure rooms&#10;for your groups&#10;at major global&#10;sports events.">We secure rooms<br>for your groups<br>at major global<br>sports events.</h1>
-      <a class="hero-link-cta" href="{{ '/contact/' | url }}">
+      <p class="hero-home-subcopy">
+        <span>2026 World Cup</span>
+        <span>2027 Super Bowl</span>
+        <span>2027 Champions League Final</span>
+        <span>2028 Summer Olympics</span>
+      </p>
+      <a class="hero-link-cta hero-link-cta--home" href="{{ '/contact/' | url }}">
         <span class="hero-link-cta__text">Get in Touch</span>
         <span class="hero-link-cta__icon" aria-hidden="true">
           <svg viewBox="0 0 19 19" role="presentation" focusable="false">

@@ -18,18 +18,16 @@ hero_link_label: Jump to Inquiry
 hero_link_url: /contact/#contact-form
 ---
 
-{% include "modules/subpage-home-hero.njk" %}
-
-<section class="story-section subpage-home-section" id="contact-form">
+<section class="story-section subpage-home-section subpage-home-section--contact-entry" id="contact-form">
   <div class="wrap-wide">
     <div class="story-grid subpage-home-contact-grid">
       <div class="story-static fade">
         <p class="eyebrow">Contact</p>
         <h2 class="section-title">One complete brief is enough for us to start moving.</h2>
-        <p class="section-lead">If email is easier than forms, write to <a href="mailto:usa@interesting-america.com">usa@interesting-america.com</a>. Otherwise use the inquiry form below.</p>
+        <p class="section-lead">If email is easier than forms, write to <a href="mailto:america@interesting.global">america@interesting.global</a>. Otherwise use the inquiry form below.</p>
 
-        <form class="panel inquiry-form" name="event-inquiry" method="POST" data-netlify="true" netlify-honeypot="company_website">
-          <input type="hidden" name="form-name" value="event-inquiry">
+        <form class="panel inquiry-form" name="event-inquiry" method="POST" action="{{ integrations.contactFormEndpoint }}">
+          <input type="hidden" name="success_path" value="{{ '/thank-you/' | url }}">
           <p class="form-honeypot" aria-hidden="true"><label>Do not fill this out: <input name="company_website"></label></p>
 
           <div class="form-grid">
@@ -51,7 +49,7 @@ hero_link_url: /contact/#contact-form
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">Submit Inquiry</button>
-            <p class="form-note">Direct email also works: <a href="mailto:usa@interesting-america.com">usa@interesting-america.com</a></p>
+            <p class="form-note">Direct email also works: <a href="mailto:america@interesting.global">america@interesting.global</a></p>
           </div>
         </form>
       </div>
