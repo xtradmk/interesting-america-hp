@@ -240,9 +240,64 @@
     close();
   };
 
+  const initErrorPage = () => {
+    if (!document.body.classList.contains('page-404')) return;
+
+    const requestedPath = document.querySelector('[data-requested-path]');
+    const redirectNote = document.querySelector('[data-redirect-note]');
+    const homeHref = document.querySelector('.logo')?.getAttribute('href') || '/';
+    const normalizedHome = homeHref.endsWith('/') ? homeHref : `${homeHref}/`;
+    const currentPath = window.location.pathname;
+    const lowerPath = currentPath.toLowerCase();
+    const aliasRedirects = new Map([
+      [`${normalizedHome}tc`, `${normalizedHome}t-c/`],
+      [`${normalizedHome}tc/`, `${normalizedHome}t-c/`]
+    ]);
+
+    if (requestedPath) {
+      requestedPath.textContent = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    }
+
+    const aliasTarget = aliasRedirects.get(lowerPath);
+    if (!aliasTarget) return;
+
+    if (redirectNote) {
+      redirectNote.hidden = false;
+      redirectNote.innerHTML = `Redirecting to <a href="${aliasTarget}">T&amp;C</a>…`;
+    }
+
+    window.setTimeout(() => {
+      window.location.replace(aliasTarget);
+    }, redirectNote ? 900 : 0);
+  };
+
+  const initFooterNewsletter = () => {
+    const form = document.querySelector('[data-newsletter-form]');
+    if (!form) return;
+
+    const emailInput = form.querySelector('input[type="email"]');
+    if (!emailInput) return;
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const email = emailInput.value.trim();
+      if (!email) {
+        emailInput.focus();
+        return;
+      }
+
+      const subject = encodeURIComponent('Newsletter subscription');
+      const body = encodeURIComponent(`Please add this email address to the newsletter list:\n\n${email}`);
+      window.location.href = `mailto:usa@interesting-america.com?subject=${subject}&body=${body}`;
+    });
+  };
+
   syncHeaderState();
   syncParallax();
   initHeroSlider();
   runTypewriter();
   initMobileMenu();
+  initErrorPage();
+  initFooterNewsletter();
 })();
