@@ -9,6 +9,47 @@
 
   const header = document.querySelector('.site-header');
   const parallaxItems = Array.from(document.querySelectorAll('.dynamic-media'));
+  const letterRevealBlocks = Array.from(document.querySelectorAll('[data-letter-reveal]')).map((el) => {
+    const fragment = document.createDocumentFragment();
+    const appendWord = (word) => {
+      if (!word) return;
+      const wordSpan = document.createElement('span');
+      wordSpan.className = 'letter-reveal-word';
+
+      Array.from(word).forEach((char) => {
+        const span = document.createElement('span');
+        span.className = 'letter-reveal-char';
+        span.textContent = char;
+        wordSpan.appendChild(span);
+      });
+
+      fragment.appendChild(wordSpan);
+    };
+
+    Array.from(el.childNodes).forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const normalizedText = node.textContent.replace(/\s+/g, ' ').trim();
+        if (!normalizedText) return;
+
+        normalizedText.split(' ').forEach((word, index) => {
+          if (index > 0) fragment.appendChild(document.createTextNode(' '));
+          appendWord(word);
+        });
+        return;
+      }
+
+      if (node.nodeName === 'BR') {
+        fragment.appendChild(document.createElement('br'));
+      }
+    });
+
+    el.replaceChildren(fragment);
+
+    return {
+      el,
+      chars: Array.from(el.querySelectorAll('.letter-reveal-char'))
+    };
+  });
 
   const syncHeaderState = () => {
     if (!header) return;
@@ -27,13 +68,42 @@
     });
   };
 
+  const syncLetterReveal = () => {
+    if (!letterRevealBlocks.length) return;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const mix = (from, to, progress) => Math.round(from + (to - from) * progress);
+
+    letterRevealBlocks.forEach(({ el, chars }) => {
+      if (!chars.length) return;
+
+      const rect = el.getBoundingClientRect();
+      const start = window.innerHeight * 0.86;
+      const endTop = window.innerHeight * 0.5 - rect.height;
+      const progress = clamp((start - rect.top) / (start - endTop), 0, 1);
+      const scaled = progress * (chars.length + 3);
+
+      chars.forEach((char, index) => {
+        const charProgress = clamp(scaled - index, 0, 1);
+        const r = mix(207, 11, charProgress);
+        const g = mix(212, 16, charProgress);
+        const b = mix(218, 32, charProgress);
+        char.style.color = `rgb(${r}, ${g}, ${b})`;
+      });
+    });
+  };
+
   const onScroll = () => {
     syncHeaderState();
     syncParallax();
+    syncLetterReveal();
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', syncParallax, { passive: true });
+  window.addEventListener('resize', () => {
+    syncParallax();
+    syncLetterReveal();
+  }, { passive: true });
 
   const initHeroSlider = () => {
     const hero = document.querySelector('.hero--photo');
@@ -52,7 +122,9 @@
       { image: hero.dataset.image5, caption: hero.dataset.caption5 || 'Santa Monica, CA' },
       { image: hero.dataset.image6, caption: hero.dataset.caption6 || 'Maracana Stadium, Rio de Janiero, Brazil · 2014 World Cup Final Venue' },
       { image: hero.dataset.image7, caption: hero.dataset.caption7 || 'The Colony Hotel*** · Miami Beach, FL' },
-      { image: hero.dataset.image8, caption: hero.dataset.caption8 || '2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue' }
+      { image: hero.dataset.image8, caption: hero.dataset.caption8 || '2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue' },
+      { image: hero.dataset.image9, caption: hero.dataset.caption9 || 'Stade de France, Paris, France · Summer Olympics 2024' },
+      { image: hero.dataset.image10, caption: hero.dataset.caption10 || 'Soccer City Stadium, Johannesburg, South Africa · World Cup 2010' }
     ].filter((slide) => slide.image);
 
     if (!slides.length) return;
@@ -242,6 +314,19 @@
     close();
   };
 
+  const initContactFormToggles = () => {
+    const toggle = document.querySelector('[data-varying-dates-toggle]');
+    const note = document.querySelector('[data-varying-dates-note]');
+    if (!toggle || !note) return;
+
+    const sync = () => {
+      note.hidden = !toggle.checked;
+    };
+
+    toggle.addEventListener('change', sync);
+    sync();
+  };
+
   const initErrorPage = () => {
     if (!document.body.classList.contains('page-404')) return;
 
@@ -273,33 +358,12 @@
     }, redirectNote ? 900 : 0);
   };
 
-  const initFooterNewsletter = () => {
-    const form = document.querySelector('[data-newsletter-form]');
-    if (!form) return;
-
-    const emailInput = form.querySelector('input[type="email"]');
-    if (!emailInput) return;
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const email = emailInput.value.trim();
-      if (!email) {
-        emailInput.focus();
-        return;
-      }
-
-      const subject = encodeURIComponent('Newsletter subscription');
-      const body = encodeURIComponent(`Please add this email address to the newsletter list:\n\n${email}`);
-      window.location.href = `mailto:america@interesting.global?subject=${subject}&body=${body}`;
-    });
-  };
-
   syncHeaderState();
   syncParallax();
+  syncLetterReveal();
   initHeroSlider();
   runTypewriter();
   initMobileMenu();
+  initContactFormToggles();
   initErrorPage();
-  initFooterNewsletter();
 })();

@@ -2,7 +2,7 @@
 layout: base.njk
 title: INTERESTING AMERICA
 description: Accommodation, transfers and hospitality for major global sports events.
-hide_footer: true
+pageClasses: page-home
 hero_dimming_percent: 100
 hero_image1: /images/uploads/hero-atl-marriott-marquis.jpg
 hero_caption1: Marriott Marquis**** · Atlanta, GA
@@ -20,6 +20,10 @@ hero_image7: /images/uploads/hero-colony-hotel-mia.jpg
 hero_caption7: The Colony Hotel*** · Miami Beach, FL
 hero_image8: /images/uploads/hero-sofi-2025.jpg
 hero_caption8: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue
+hero_image9: /images/uploads/hero-paris-stadium.jpg
+hero_caption9: Stade de France, Paris, France · Summer Olympics 2024
+hero_image10: /images/uploads/hero-southafrica.jpeg
+hero_caption10: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
 ---
 
 <section class="hero section hero--photo" id="home"
@@ -39,7 +43,11 @@ hero_caption8: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Ve
   data-image7="{{ hero_image7 | url }}"
   data-caption7="{{ hero_caption7 }}"
   data-image8="{{ hero_image8 | url }}"
-  data-caption8="{{ hero_caption8 }}">
+  data-caption8="{{ hero_caption8 }}"
+  data-image9="{{ hero_image9 | url }}"
+  data-caption9="{{ hero_caption9 }}"
+  data-image10="{{ hero_image10 | url }}"
+  data-caption10="{{ hero_caption10 }}">
   <div class="hero-bg-track" aria-hidden="true">
     <div class="hero-bg hero-bg--active" style="background-image:url('{{ hero_image1 | url }}')"></div>
     <div class="hero-bg hero-bg--next" style="background-image:url('{{ hero_image2 | url }}')"></div>
@@ -59,7 +67,7 @@ hero_caption8: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Ve
       <h1 class="typewriter" data-text="We secure rooms&#10;for your groups&#10;at major global&#10;sports events.">We secure rooms<br>for your groups<br>at major global<br>sports events.</h1>
       <p class="hero-home-subcopy">
         <span>2026 World Cup</span>
-        <span>2027 Super Bowl</span>
+        <span>2027 Women's World Cup</span>
         <span>2027 Champions League Final</span>
         <span>2028 Summer Olympics</span>
       </p>
