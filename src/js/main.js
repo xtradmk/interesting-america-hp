@@ -399,6 +399,105 @@
     }, redirectNote ? 900 : 0);
   };
 
+  const initAboutInteractions = () => {
+    if (!document.body.classList.contains('page-about')) return;
+
+    const processSteps = Array.from(document.querySelectorAll('[data-about-step]'));
+    const processGrid = document.querySelector('.about-page-process-grid');
+    const projectCards = Array.from(document.querySelectorAll('[data-about-project-card]'));
+    const timeline = document.querySelector('[data-about-timeline]');
+    const timelineEntries = Array.from(document.querySelectorAll('[data-about-timeline-entry]'));
+
+    if (processSteps.length) {
+      const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+      let pinnedStep = null;
+
+      const setActiveStep = (activeStep = null) => {
+        processSteps.forEach((step) => {
+          const isActive = step === activeStep;
+          step.classList.toggle('is-active', isActive);
+          step.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      };
+
+      processSteps.forEach((step) => {
+        step.addEventListener('mouseenter', () => {
+          if (!supportsHover.matches || pinnedStep) return;
+          setActiveStep(step);
+        });
+
+        step.addEventListener('focusin', () => {
+          if (pinnedStep) return;
+          setActiveStep(step);
+        });
+
+        step.addEventListener('click', () => {
+          pinnedStep = pinnedStep === step ? null : step;
+          setActiveStep(pinnedStep);
+        });
+
+        step.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          pinnedStep = pinnedStep === step ? null : step;
+          setActiveStep(pinnedStep);
+        });
+      });
+
+      processGrid?.addEventListener('mouseleave', () => {
+        if (supportsHover.matches && !pinnedStep) setActiveStep(null);
+      });
+
+      if (supportsHover.matches) setActiveStep(null);
+    }
+
+    if (projectCards.length) {
+      const setActiveProjectCard = (targetCard) => {
+        projectCards.forEach((card) => {
+          card.classList.toggle('is-active', card === targetCard);
+        });
+      };
+
+      projectCards.forEach((card) => {
+        card.addEventListener('mouseenter', () => setActiveProjectCard(card));
+        card.addEventListener('focusin', () => setActiveProjectCard(card));
+        card.addEventListener('click', () => setActiveProjectCard(card));
+      });
+    }
+
+    if (timeline && timelineEntries.length) {
+      const syncTimeline = () => {
+        const focusY = window.innerHeight * 0.5;
+        let activeEntry = timelineEntries[0];
+        let bestDistance = Number.POSITIVE_INFINITY;
+
+        timelineEntries.forEach((entry) => {
+          const rect = entry.getBoundingClientRect();
+          const center = rect.top + rect.height * 0.5;
+          const distance = Math.abs(center - focusY);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            activeEntry = entry;
+          }
+        });
+
+        timelineEntries.forEach((entry) => {
+          entry.classList.toggle('is-active', entry === activeEntry);
+        });
+
+        const timelineRect = timeline.getBoundingClientRect();
+        const activeRect = activeEntry.getBoundingClientRect();
+        const nodeOffset = parseFloat(getComputedStyle(timeline).getPropertyValue('--about-timeline-node-offset')) || 16.5;
+        const progress = Math.max(0, activeRect.top - timelineRect.top + nodeOffset);
+        timeline.style.setProperty('--about-timeline-progress', `${progress.toFixed(1)}px`);
+      };
+
+      window.addEventListener('scroll', syncTimeline, { passive: true });
+      window.addEventListener('resize', syncTimeline, { passive: true });
+      syncTimeline();
+    }
+  };
+
   syncHeaderState();
   syncParallax();
   syncLetterReveal();
@@ -408,4 +507,5 @@
   initContactFormToggles();
   initLegalOverlays();
   initErrorPage();
+  initAboutInteractions();
 })();
