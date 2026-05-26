@@ -7,14 +7,14 @@ templateEngineOverride: njk
 hero_dimming_percent: 100
 hero_image1: /images/uploads/hero-st-regis-san-francisco.jpg
 hero_caption1: The St. Regis***** · San Francisco, CA
-hero_image2: /images/uploads/hero-los-angeles-ca.jpg
-hero_caption2: Los Angeles, CA · Host City of the 2028 Summer Olympics
-hero_image3: /images/uploads/hero-dallas-tx.jpg
-hero_caption3: Dallas, TX · 2026 Soccer World Cup Host City
-hero_image4: /images/uploads/hero-paris-stadium.jpg
-hero_caption4: Stade de France, Paris, France · Summer Olympics 2024
-hero_image5: /images/uploads/hero-southafrica.jpeg
-hero_caption5: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
+hero_image2: /images/uploads/hero-paris-stadium.jpg
+hero_caption2: Stade de France, Paris, France · Summer Olympics 2024
+hero_image3: /images/uploads/hero-southafrica.jpeg
+hero_caption3: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
+hero_image4: /images/uploads/hero-los-angeles-ca.jpg
+hero_caption4: Los Angeles, CA · Host City of the 2028 Summer Olympics
+hero_image5: /images/uploads/hero-dallas-tx.jpg
+hero_caption5: Dallas, TX · 2026 Soccer World Cup Host City
 hero_title: Sourcing and<br>coordinating,<br>as required by<br>complex event travel.
 hero_copy: >
   Clients work with us when the project matters, timelines are tight, and a standard booking process is not enough - as usually the case at high-stakes sports events.

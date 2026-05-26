@@ -7,14 +7,14 @@ templateEngineOverride: njk
 hero_dimming_percent: 100
 hero_image1: /images/uploads/hero-sofi-2025.jpg
 hero_caption1: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue
-hero_image2: /images/uploads/hero-atl-marriott-marquis.jpg
-hero_caption2: Marriott Marquis**** · Atlanta, GA
-hero_image3: /images/uploads/hero-colony-hotel-mia.jpg
-hero_caption3: The Colony Hotel*** · Miami Beach, FL
-hero_image4: /images/uploads/hero-paris-stadium.jpg
-hero_caption4: Stade de France, Paris, France · Summer Olympics 2024
-hero_image5: /images/uploads/hero-southafrica.jpeg
-hero_caption5: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
+hero_image2: /images/uploads/hero-paris-stadium.jpg
+hero_caption2: Stade de France, Paris, France · Summer Olympics 2024
+hero_image3: /images/uploads/hero-southafrica.jpeg
+hero_caption3: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
+hero_image4: /images/uploads/hero-atl-marriott-marquis.jpg
+hero_caption4: Marriott Marquis**** · Atlanta, GA
+hero_image5: /images/uploads/hero-colony-hotel-mia.jpg
+hero_caption5: The Colony Hotel*** · Miami Beach, FL
 hero_title: Global accommodation,<br>transfers,<br>and hospitality,<br>all in one place.
 hero_copy: We provide solutions for federations, sponsors, media, and travel agencies since 2010.
 hero_link_label: Start an Inquiry
