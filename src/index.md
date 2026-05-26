@@ -6,24 +6,24 @@ pageClasses: page-home
 hero_dimming_percent: 100
 hero_image1: /images/uploads/hero-atl-marriott-marquis.jpg
 hero_caption1: Marriott Marquis**** · Atlanta, GA
-hero_image2: /images/uploads/hero-paris-stadium.jpg
-hero_caption2: Stade de France, Paris, France · Summer Olympics 2024
-hero_image3: /images/uploads/hero-southafrica.jpeg
-hero_caption3: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
-hero_image4: /images/uploads/hero-st-regis-san-francisco.jpg
-hero_caption4: The St. Regis***** · San Francisco, CA
-hero_image5: /images/uploads/hero-los-angeles-ca.jpg
-hero_caption5: Los Angeles, CA · Host City of the 2028 Summer Olympics
-hero_image6: /images/uploads/hero-dallas-tx.jpg
-hero_caption6: Dallas, TX · 2026 Soccer World Cup Host City
-hero_image7: /images/uploads/hero-santa-monica-ca.jpg
-hero_caption7: Santa Monica, CA
-hero_image8: /images/uploads/hero-maracana-2014.jpg
-hero_caption8: Maracana Stadium, Rio de Janiero, Brazil · 2014 World Cup Final Venue
-hero_image9: /images/uploads/hero-colony-hotel-mia.jpg
-hero_caption9: The Colony Hotel*** · Miami Beach, FL
-hero_image10: /images/uploads/hero-sofi-2025.jpg
-hero_caption10: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue
+hero_image2: /images/uploads/hero-st-regis-san-francisco.jpg
+hero_caption2: The St. Regis***** · San Francisco, CA
+hero_image3: /images/uploads/hero-los-angeles-ca.jpg
+hero_caption3: Los Angeles, CA · Host City of the 2028 Summer Olympics
+hero_image4: /images/uploads/hero-dallas-tx.jpg
+hero_caption4: Dallas, TX · 2026 Soccer World Cup Host City
+hero_image5: /images/uploads/hero-santa-monica-ca.jpg
+hero_caption5: Santa Monica, CA
+hero_image6: /images/uploads/hero-maracana-2014.jpg
+hero_caption6: Maracana Stadium, Rio de Janiero, Brazil · 2014 World Cup Final Venue
+hero_image7: /images/uploads/hero-colony-hotel-mia.jpg
+hero_caption7: The Colony Hotel*** · Miami Beach, FL
+hero_image8: /images/uploads/hero-sofi-2025.jpg
+hero_caption8: 2028 Stadium, Inglewood, CA · Olympic Ceremonies and Swimming Venue
+hero_image9: /images/uploads/hero-paris-stadium.jpg
+hero_caption9: Stade de France, Paris, France · Summer Olympics 2024
+hero_image10: /images/uploads/hero-southafrica.jpeg
+hero_caption10: Soccer City Stadium, Johannesburg, South Africa · World Cup 2010
 ---
 
 <section class="hero section hero--photo" id="home"
